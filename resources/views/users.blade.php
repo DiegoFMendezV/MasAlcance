@@ -5,7 +5,8 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Telefono</th>
-            <th>id</th>
+            <th>Publicaciones</th>
+            <th>Álbumes</th>
         </tr>
     </thead>
     <tbody>
@@ -14,9 +15,11 @@
                 <td>{{ $user['name'] }}</td>
                 <td>{{ $user['email'] }}</td>
                 <td>{{ $user['phone'] }}</td>
-                <td>{{ $user['id'] }}</td>
-                <td><a href="/posts/{{$user['id']}}">Ver Publicaciones</a></td>
+                <td><a href="/posts/{{$user['id']}}">Ver</a></td>
+                <td><a href="/albums/{{$user['id']}}">Ver</a></td>
             </tr>
         @endforeach
     </tbody>
 </table>
+<br>
+<a href="/logs">Crear Petición</a>

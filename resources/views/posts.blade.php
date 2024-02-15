@@ -1,4 +1,4 @@
-<h1>Publicaciones</h1>
+<h1>Publicaciones {{  }}</h1>
 <table>
     <thead>
         <tr>
