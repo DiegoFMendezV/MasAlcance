@@ -19,7 +19,7 @@ use App\Http\Controllers\LogsController;
 |
 */
 
-Route::get('/users', [UsersController::class, 'index']);
+Route::get('/', [UsersController::class, 'index']);
 Route::get('/posts/{id}', [PostsController::class, 'index']);
 Route::get('/albums/{id}', [AlbumsController::class, 'index']);
 

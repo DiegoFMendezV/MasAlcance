@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: #1071d6;
+}
+
+#nav_text{
+    color: white;
+}
+
+.title{
+    color: #1071d6;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+.logo img{
+    width: 200px;
+}
