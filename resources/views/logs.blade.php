@@ -19,7 +19,7 @@
                 <td>{{ $log['Metodo'] }}</td>
                 <td>{{ $log['Retorno'] }}</td>
                 <td><button type="button" class="btn btn-success"><a href="/logs/{{$log['id']}}">Editar</a></button></td>
-                <form action="{{ route('logs_destroy', ['id' => $log->id]) }}" method="POST">
+                <form id="form-logs" action="{{ route('logs_destroy', ['id' => $log->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <td><button type="submit" class="btn btn-danger">Eliminar</button></td>
@@ -30,4 +30,23 @@
     </tbody>
 </table>
 <button type="button" class="btn btn-primary"><a href="/">Atrás</a></button>
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+        $('#form-logs').on('submit',function(e){
+            e.preventDefault();
+            Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                this.submit()
+            })
+        })  
+    </script>
 @endsection
