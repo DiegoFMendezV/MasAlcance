@@ -22,4 +22,4 @@
     </tbody>
 </table>
 <br>
-<a href="/logs">Crear Petición</a>
+<a href="/logs">Peticiones</a>

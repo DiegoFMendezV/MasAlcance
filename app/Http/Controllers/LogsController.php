@@ -16,16 +16,24 @@ class LogsController extends Controller
         return Log::create($request->all());
     }
 
-    public function show(Log $log){
-        return Log::find($log->id);
+    public function show($id){
+        $log = Log::find($id);
+        return view('logs_edit', compact('log'));
     }
 
-    public function update(Request $request, Log $log){
-        $log->update($request->all());
-        return $log;
+    public function update(Request $request, $id){
+        $log = Log::find($id);
+        $log->Fecha = $request->Fecha;
+        $log->Metodo = $request->Metodo;
+        $log->Retorno = $request->Retorno;
+        $log->save();
+        return redirect()->route('logs');
     }
 
-    public function destroy(Log $log){
-        $log->destroy($log->id);
+    public function destroy($id){
+        $log = Log::find($id);
+        $log->delete();
+        
+        return redirect()->route('logs');
     }
 }

@@ -23,4 +23,8 @@ Route::get('/users', [UsersController::class, 'index']);
 Route::get('/posts/{id}', [PostsController::class, 'index']);
 Route::get('/albums/{id}', [AlbumsController::class, 'index']);
 
-Route::get('/logs', [LogsController::class, 'index']);
+Route::get('/logs', [LogsController::class, 'index'])->name('logs');
+Route::get('/logs/{id}', [LogsController::class, 'show']);
+Route::patch('/logs/{id}', [LogsController::class, 'update'])->name('logs_update');
+Route::post('/logs/create', [LogsController::class, 'store']);
+Route::delete('/logs/{id}', [LogsController::class, 'destroy'])->name('logs_destroy');
