@@ -18,7 +18,7 @@
 
         @yield('content')
     </div>
-    
+
     <div class="logo">
         <img src="https://www.masalcance.com/wp-content/uploads/2021/07/Logo-slogan-lateral-e1676656527690.png" alt="">
     </div>

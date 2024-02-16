@@ -1,5 +1,8 @@
-<h1>Peticiones Realizadas</h1>
-<table>
+@extends('base')
+
+@section('content')
+<h1 class="title">Peticiones Realizadas</h1>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Fecha</th>
@@ -15,14 +18,16 @@
                 <td>{{ $log['Fecha'] }}</td>
                 <td>{{ $log['Metodo'] }}</td>
                 <td>{{ $log['Retorno'] }}</td>
-                <td><a href="/logs/{{$log['id']}}">Editar</a></td>
+                <td><button type="button" class="btn btn-success"><a href="/logs/{{$log['id']}}">Editar</a></button></td>
                 <form action="{{ route('logs_destroy', ['id' => $log->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
-                    <td><button type="submit">Eliminar</button></td>
+                    <td><button type="submit" class="btn btn-danger">Eliminar</button></td>
                 </form>
                 
             </tr>
         @endforeach
     </tbody>
 </table>
+<button type="button" class="btn btn-primary"><a href="/">Atrás</a></button>
+@endsection
